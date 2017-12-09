@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>ID나 비밀번호가 일치하지 않습니다.</p>
+{% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="hidden" name="next" value=""/>
+
+        <input class="form-control" placeholder="{{ form.username.label }}" name="{{ form.username.name }}" type="text"
+               tabindex="1">
+        <input class="form-control" placeholder="{{ form.password.label }}" name="{{ form.password.name }}"
+               type="password" value="" tabindex="2">
+        <div class="checkbox">
+            <label>
+                <input name="remember" type="checkbox" value="Remember Me">Remember Me!!
+            </label>
+        </div>
+        <!-- Change this to a button or input when using this as a form -->
+{#        <a href="javascript:login.submit();" class="btn btn-lg btn-success btn-block" tabindex="3">Login</a>#}
+        {#                                <p class="text-muted"></p><a href="{% url 'realestate:register' %}">Sign Up</a></p>#}
+        <!--a href="../../realestate/templates/pages/index.html" class="btn btn-lg btn-success btn-block">Sign Up</a-->
+        <!--input type="submit" class="btn btn-lg btn-success btn-block">Login</input-->
+        <!--input type="submit" class="btn btn-lg btn-success btn-block">Login</input-->
+
+
+        <button type="submit">로그인</button>
+    </form>
+
+{% endblock %}
