@@ -11,7 +11,7 @@ from django.urls import reverse
 class Post(models.Model):
 
     title = models.CharField(max_length=1024)
-    slug = models.SlugField('SLUG', unique=True, allow_unicode=True, help_text='one word for title alias')
+    slug = models.SlugField(unique=True, allow_unicode=True, help_text='one word for title alias')
     body = models.CharField(max_length=4096)
     author = models.ForeignKey(User)
     create_date = models.DateTimeField(auto_created=True, auto_now_add=True)

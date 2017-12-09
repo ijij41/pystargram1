@@ -28,8 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['13.124.243.206','localhost','127.0.0.1']
 
-
-
+#ID admin dlwjdgns
 
 
 
@@ -137,7 +136,7 @@ MEDIA_URL = '/upload_files/'
 
 STATIC_URL = '/static/'  #At web, showing directory
 STATICFILES_DIRS = (   # linked pracitcal directory
-    # os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'bootstrap/static1'),
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')   # collectstatic
